@@ -19,9 +19,9 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .W{max-width:1260px;margin:0 auto;padding:0 40px}
 .label{font-family:var(--fm);font-size:.67rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .divider{width:40px;height:1px;background:var(--gold);display:block;margin:14px 0 22px}
-.fu{opacity:0;transform:translateY(26px);transition:opacity .75s,transform .75s}
-.fu.on{opacity:1;transform:translateY(0)}
-.fu.d1{transition-delay:.15s}.fu.d2{transition-delay:.3s}.fu.d3{transition-delay:.45s}
+.fu{opacity:0;transform:translateY(22px);animation:fadeUp .8s ease forwards}
+.fu.d1{animation-delay:.15s}.fu.d2{animation-delay:.3s}.fu.d3{animation-delay:.45s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
 .nav-logo-wrap{display:flex;flex-direction:column;gap:2px}
 .nav-logo-name{font-family:var(--fs);font-size:1.2rem;font-weight:400;color:var(--white);letter-spacing:.03em;line-height:1}
@@ -120,8 +120,8 @@ section{position:relative;z-index:1}
 .mbrow{display:flex;align-items:center;gap:9px;margin-bottom:8px}
 .mblbl{font-size:.69rem;color:var(--ash2);min-width:108px}
 .mbtrack{flex:1;height:3px;background:var(--bd2);border-radius:2px;overflow:hidden}
-.mbfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform 1s ease .4s}
-.mbfill.on{transform:scaleX(1)}
+.mbfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform-origin:left;animation:barGrow 1.2s ease 0.8s both}
+@keyframes barGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .mbval{font-family:var(--fm);font-size:.59rem;color:var(--gold);min-width:34px;text-align:right}
 .news{padding:92px 0;background:var(--ink2);border-top:1px solid var(--bd)}
 .nhr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px}
@@ -268,7 +268,7 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
   <div class="ticker"><div class="tpill"><span class="tdot"></span><span class="label" style="font-size:.57rem;color:var(--ash2)">Live Market &middot; Q1 2026</span></div></div>
   <div class="hbg2"><img src="hero-bg.png" alt="Hyderabad Commercial Skyline"/></div>
   <div class="hc">
-    <div class="heyebrow fu"><span>Triumph Asset Advisors</span><span class="heline"></span><span>Est. 2013 &middot; Hyderabad</span></div>
+    <div class="heyebrow fu"><span>Triumph Asset Advisors</span><span class="heline"></span><span>Est. 2024 &middot; Hyderabad</span></div>
     <h1 class="hh1 fu d1">Where<br/>Capital Meets<br/><em>Conviction.</em></h1>
     <p class="hsub fu d2">Hyderabad's premier commercial real estate advisory &mdash; serving institutional investors, Fortune 500 occupiers, and high-growth brands across leasing, acquisitions, and strategic consulting.</p>
     <div class="ha fu d3">
@@ -279,10 +279,10 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
 </section>
 <div class="sbar">
   <div class="sbinner">
-    <div class="si fu"><div class="snum" data-count="250000" data-suffix="+ sq ft">0</div><div class="slbl">Total Area Leased</div></div>
-    <div class="si fu d1"><div class="snum" data-count="76000" data-suffix="+ sft">0</div><div class="slbl">Total Area Sold</div></div>
-    <div class="si fu d2"><div class="snum" data-count="110" data-suffix="+">0</div><div class="slbl">Corporate Clients</div></div>
-    <div class="si fu d3"><div class="snum" data-count="11" data-suffix="+ Yrs">0</div><div class="slbl">Domain Expertise</div></div>
+    <div class="si fu"><div class="snum" data-count="250000" data-suffix="+ sq ft">250,000+ sq ft</div><div class="slbl">Total Area Leased</div></div>
+    <div class="si fu d1"><div class="snum" data-count="76000" data-suffix="+ sft">76,000+ sft</div><div class="slbl">Total Area Sold</div></div>
+    <div class="si fu d2"><div class="snum" data-count="110" data-suffix="+">110+</div><div class="slbl">Corporate Clients</div></div>
+    <div class="si fu d3"><div class="snum" data-count="11" data-suffix="+ Yrs">11+ Yrs</div><div class="slbl">Domain Expertise</div></div>
   </div>
 </div>
 <section class="svc" id="services">
@@ -293,7 +293,7 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
     </div>
     <div class="sg fu d1">
       <div class="sc2"><img src="image-leasing.webp" alt="Commercial Leasing" class="sc2-img"/><div class="sc2-body"><span class="snum2">01</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="8" width="30" height="24" rx="1"/><path d="M5 16h30M14 16v16M26 16v16"/></svg><h3 class="stitle">Commercial Leasing</h3><p class="sdsc">Securing premium Grade-A retail and office space across HITEC City, Banjara Hills, Jubilee Hills, Gachibowli, Financial District, and emerging corridors.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
-      <div class="sc2"><img src="img-investment.jpg" alt="Investment Advisory" class="sc2-img"/><div class="sc2-body"><span class="snum2">02</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l6 4"/><path d="M8 20h4M28 20h4M20 8v4M20 28v4"/></svg><h3 class="stitle">Investment Advisory</h3><p class="sdsc">Strategic land bank acquisitions, high-yield commercial assets, SEZ investments, and portfolio diversification for HNIs, family offices, and institutional clients.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
+      <div class="sc2"><img src="image-investment0.webp" alt="Investment Advisory" class="sc2-img"/><div class="sc2-body"><span class="snum2">02</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l6 4"/><path d="M8 20h4M28 20h4M20 8v4M20 28v4"/></svg><h3 class="stitle">Investment Advisory</h3><p class="sdsc">Strategic land bank acquisitions, high-yield commercial assets, SEZ investments, and portfolio diversification for HNIs, family offices, and institutional clients.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
       <div class="sc2"><img src="image-intelligence.webp" alt="Market Intelligence" class="sc2-img"/><div class="sc2-body"><span class="snum2">03</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 32L20 8l12 24"/><path d="M12 24h16"/></svg><h3 class="stitle">Market Intelligence</h3><p class="sdsc">Rigorous micromarket analysis: rental yields, vacancy rates, absorption data, brand footprint mapping, and demand-gap identification across Hyderabad.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
       <div class="sc2"><img src="image-brand.webp" alt="Brand Expansion" class="sc2-img"/><div class="sc2-body"><span class="snum2">04</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 28V18M20 28V10M28 28V22"/><path d="M7 32h26"/></svg><h3 class="stitle">Brand Expansion</h3><p class="sdsc">End-to-end site selection, competitive landscape analysis, and deal structuring for national and international retail brands entering or expanding in Hyderabad.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
     </div>
@@ -345,7 +345,7 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
       <div class="mright fu d2">
         <span class="aibadge"><span class="dot"></span><span class="label" style="font-size:.55rem">AI-Powered &middot; Live Analysis</span></span>
         <h3 class="aih">Hyderabad Market Brief</h3>
-        <div id="aim" class="ld"><div class="spin"></div>Generating analysis&hellip;</div>
+        <div id="aim">Hyderabad's commercial real estate market enters Q1 2026 with structural momentum intact. HITEC City Grade-A office rents hold firm at ₹72 per sq ft per month against a sub-6% vacancy rate, driven by sustained GCC and IT/ITeS demand that absorbed 3.2 million sq ft in Q2 2025 — a 23% year-on-year increase. The Financial District is consolidating as the city's next premium nucleus, with rental values 25% above pre-pandemic levels. Retail corridor demand accelerates across Banjara Hills, Jubilee Hills, and Kondapur, driven by organised retail expansion. Rental yields in prime IT corridors sustain a 4-6% band with a 10-year CAGR of 11-12%. Emerging sub-markets of Kokapet and Narsingi offer 10-15% rental arbitrage versus HITEC City.</div>
         <button class="rfbtn" onclick="loadMarket()"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M8 4.5A3.5 3.5 0 1 1 4.5 1M8 1v3.5H4.5" stroke="currentColor" stroke-width="1.1"/></svg> Refresh</button>
         <div class="mbars" id="mbars">
           <div class="mbrow"><span class="mblbl">HITEC City</span><div class="mbtrack"><div class="mbfill" style="width:95%"></div></div><span class="mbval">&#8377;72</span></div>
@@ -364,12 +364,12 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
       <div><span class="label">Market News</span><span class="divider"></span><h2 class="sh2">India Real Estate<br/><em>Intelligence Feed</em></h2></div>
       <button class="nrfbtn" onclick="loadNews()"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M9 5A4 4 0 1 1 5 1M9 1v4H5" stroke="currentColor" stroke-width="1.1"/></svg> Refresh Feed</button>
     </div>
-    <div id="nc" class="ln"><div class="spin"></div>Fetching headlines&hellip;</div>
+    <div id="nc" class="ln"><div class="spin"></div>Loading headlines&hellip;</div>
   </div>
 </section>
 <section class="founders" id="founders">
   <div class="fi-band">
-    <div class="fi-band-bg" style="background-image:url('img-investment.jpg')"></div>
+    <div class="fi-band-bg" style="background-image:url('image-investment0.webp')"></div>
     <div class="fi-band-overlay"></div>
     <div class="fi-inner">
       <div class="fi-kicker fu">The People Behind Every Deal</div>
@@ -497,25 +497,17 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
 
-const io=new IntersectionObserver(entries=>{
+/* Counters only — visibility handled by CSS animation */
+const statItems=document.querySelectorAll('.si');
+const statIO=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      e.target.classList.add('on');
       const sn=e.target.querySelector('[data-count]');
       if(sn) animCount(sn);
-      e.target.querySelectorAll('.mbfill').forEach(b=>b.classList.add('on'));
     }
   });
-},{threshold:0.1});
-document.querySelectorAll('.fu').forEach(el=>io.observe(el));
-
-const mb=document.getElementById('mbars');
-if(mb){
-  const io2=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.querySelectorAll('.mbfill').forEach(b=>b.classList.add('on')); });
-  },{threshold:0.3});
-  io2.observe(mb);
-}
+},{threshold:0.3});
+statItems.forEach(el=>statIO.observe(el));
 
 function animCount(el){
   if(el.dataset.done) return;
