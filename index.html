@@ -22,6 +22,10 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .fu{opacity:0;transform:translateY(26px);transition:opacity .75s,transform .75s}
 .fu.on{opacity:1;transform:translateY(0)}
 .fu.d1{transition-delay:.15s}.fu.d2{transition-delay:.3s}.fu.d3{transition-delay:.45s}
+
+.nav-logo-wrap{display:flex;flex-direction:column;gap:2px}
+.nav-logo-name{font-family:var(--fs);font-size:1.2rem;font-weight:400;color:var(--white);letter-spacing:.03em;line-height:1}
+.nav-logo-sub{font-family:var(--fm);font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s}
 nav.sc{background:rgba(11,13,17,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
 .ni{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 40px;max-width:1400px;margin:0 auto}
@@ -69,7 +73,11 @@ section{position:relative;z-index:1}
 .shdr{display:flex;align-items:flex-start;gap:48px;margin-bottom:60px}
 .svc{padding:92px 0;background:var(--ink)}
 .sg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--bd)}
-.sc2{padding:42px 26px;border-right:1px solid var(--bd);position:relative;overflow:hidden;transition:background .4s}
+
+.sc2-img{width:100%;height:160px;object-fit:cover;opacity:.55;filter:grayscale(25%);transition:opacity .4s,transform .6s;display:block}
+.sc2:hover .sc2-img{opacity:.75;transform:scale(1.04)}
+.sc2-body{padding:24px 22px 28px}
+.sc2{padding:0;border-right:1px solid var(--bd);position:relative;overflow:hidden;transition:background .4s}
 .sc2:last-child{border-right:none}
 .sc2::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
 .sc2:hover::after{transform:scaleX(1)}
@@ -244,7 +252,7 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
 </div>
 <nav id="nav">
   <div class="ni">
-    <a href="#home"><img src="ima-office.jpg" 
+    <a href="#home" class="nav-logo-wrap"><span class="nav-logo-name">Triumph Asset Advisors</span><span class="nav-logo-sub">Consulting &middot; Leasing &middot; Investments</span></a>
     <ul class="nl">
       <li><a href="#services">Services</a></li>
       <li><a href="#why-us">Why Triumph</a></li>
@@ -260,7 +268,7 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
   <div class="ticker"><div class="tpill"><span class="tdot"></span><span class="label" style="font-size:.57rem;color:var(--ash2)">Live Market &middot; Q1 2026</span></div></div>
   <div class="hbg2"><img src="hero-bg.png" alt="Hyderabad Commercial Skyline"/></div>
   <div class="hc">
-    <div class="heyebrow fu"><span>Triumph Asset Advisors</span><span class="heline"></span><span>Est. 2024 &middot; Hyderabad</span></div>
+    <div class="heyebrow fu"><span>Triumph Asset Advisors</span><span class="heline"></span><span>Est. 2013 &middot; Hyderabad</span></div>
     <h1 class="hh1 fu d1">Where<br/>Capital Meets<br/><em>Conviction.</em></h1>
     <p class="hsub fu d2">Hyderabad's premier commercial real estate advisory &mdash; serving institutional investors, Fortune 500 occupiers, and high-growth brands across leasing, acquisitions, and strategic consulting.</p>
     <div class="ha fu d3">
@@ -284,28 +292,21 @@ footer{background:var(--ink);border-top:1px solid var(--bd);padding:52px 0 26px}
       <p class="sdesc">From first-look market analysis to signed agreements &mdash; we cover every phase of the commercial real estate lifecycle.</p>
     </div>
     <div class="sg fu d1">
-      <div class="sc2"><span class="snum2">01</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="8" width="30" height="24" rx="1"/><path d="M5 16h30M14 16v16M26 16v16"/></svg><h3 class="stitle">Commercial Leasing</h3><p class="sdsc">Securing premium Grade-A retail and office space across HITEC City, Banjara Hills, Jubilee Hills, Gachibowli, Financial District, and emerging corridors.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div>
-      <div class="sc2"><span class="snum2">02</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l6 4"/><path d="M8 20h4M28 20h4M20 8v4M20 28v4"/></svg><h3 class="stitle">Investment Advisory</h3><p class="sdsc">Strategic land bank acquisitions, high-yield commercial assets, SEZ investments, and portfolio diversification for HNIs, family offices, and institutional clients.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div>
-      <div class="sc2"><span class="snum2">03</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 32L20 8l12 24"/><path d="M12 24h16"/></svg><h3 class="stitle">Market Intelligence</h3><p class="sdsc">Rigorous micromarket analysis: rental yields, vacancy rates, absorption data, brand footprint mapping, and demand-gap identification across Hyderabad.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div>
-      <div class="sc2"><span class="snum2">04</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 28V18M20 28V10M28 28V22"/><path d="M7 32h26"/></svg><h3 class="stitle">Brand Expansion</h3><p class="sdsc">End-to-end site selection, competitive landscape analysis, and deal structuring for national and international retail brands entering or expanding in Hyderabad.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div>
+      <div class="sc2"><img src="image-leasing.webp" alt="Commercial Leasing" class="sc2-img"/><div class="sc2-body"><span class="snum2">01</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="8" width="30" height="24" rx="1"/><path d="M5 16h30M14 16v16M26 16v16"/></svg><h3 class="stitle">Commercial Leasing</h3><p class="sdsc">Securing premium Grade-A retail and office space across HITEC City, Banjara Hills, Jubilee Hills, Gachibowli, Financial District, and emerging corridors.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
+      <div class="sc2"><img src="img-investment.jpg" alt="Investment Advisory" class="sc2-img"/><div class="sc2-body"><span class="snum2">02</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l6 4"/><path d="M8 20h4M28 20h4M20 8v4M20 28v4"/></svg><h3 class="stitle">Investment Advisory</h3><p class="sdsc">Strategic land bank acquisitions, high-yield commercial assets, SEZ investments, and portfolio diversification for HNIs, family offices, and institutional clients.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
+      <div class="sc2"><img src="image-intelligence.webp" alt="Market Intelligence" class="sc2-img"/><div class="sc2-body"><span class="snum2">03</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 32L20 8l12 24"/><path d="M12 24h16"/></svg><h3 class="stitle">Market Intelligence</h3><p class="sdsc">Rigorous micromarket analysis: rental yields, vacancy rates, absorption data, brand footprint mapping, and demand-gap identification across Hyderabad.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
+      <div class="sc2"><img src="image-brand.webp" alt="Brand Expansion" class="sc2-img"/><div class="sc2-body"><span class="snum2">04</span><svg class="sico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 28V18M20 28V10M28 28V22"/><path d="M7 32h26"/></svg><h3 class="stitle">Brand Expansion</h3><p class="sdsc">End-to-end site selection, competitive landscape analysis, and deal structuring for national and international retail brands entering or expanding in Hyderabad.</p><span class="sarr">Learn More <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg></span></div></div>
     </div>
   </div>
 </section>
-  <div style="height:280px;overflow:hidden;position:relative;
-border-top:1px solid rgba(200,168,90,.15);
-border-bottom:1px solid rgba(200,168,90,.15);">
-  <img src="img-hyderabad.jpg" 
-       style="width:100%;height:100%;object-fit:cover;
-       opacity:0.35;filter:grayscale(20%);transform:scale(1.05)"/>
-  <div style="position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(11,13,17,.9),rgba(11,13,17,.4))">
-  </div>
-  <div style="position:absolute;inset:0;display:flex;
-  align-items:center;padding:0 10%;">
-    <p style="font-family:'Cormorant Garamond',serif;
-    font-size:clamp(1.4rem,3vw,2.8rem);font-style:italic;
-    font-weight:300;color:#f5e4b0;max-width:700px;line-height:1.4;">
-      "Hyderabad's commercial corridors don't just connect roads —
+
+<!-- HYDERABAD QUOTE BAND -->
+<div style="height:280px;overflow:hidden;position:relative;border-top:1px solid rgba(200,168,90,.15);border-bottom:1px solid rgba(200,168,90,.15);">
+  <img src="img-hyderabad.jpg" style="width:100%;height:100%;object-fit:cover;opacity:0.42;filter:grayscale(10%);transform:scale(1.05)"/>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,13,17,.92),rgba(11,13,17,.45))"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 10%;">
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2.8rem);font-style:italic;font-weight:300;color:#f5e4b0;max-width:700px;line-height:1.4;">
+      "Hyderabad's commercial corridors don't just connect roads &mdash;
       <em style="color:#e2c47a">they connect ambitions to addresses.</em>"
     </p>
   </div>
@@ -313,12 +314,12 @@ border-bottom:1px solid rgba(200,168,90,.15);">
 <section class="why" id="why-us">
   <div class="W">
     <div class="wg">
-      <div class="fu"><img src="https://images.squarespace-cdn.com/content/v1/5e87eb48a3b51a36be988a7e/1629443885064-WY6HZ8YN9ZJE8RU95J1E/Maxim-Integrated-Corporate-Office-Bangalore-Zyeta-38.jpg" alt="Grade-A Office Space" class="wimg" onerror="this.src='about-team.png'"/></div>
+      <div class="fu"><img src="img-office.jpg" alt="Grade-A Office Space" class="wimg" onerror="this.src='about-team.png'"/></div>
       <div class="fu d2" style="padding-top:6px">
         <span class="label">The Triumph Difference</span><span class="divider"></span>
         <h2 class="sh2" style="margin-bottom:32px">We don't broker<br/><em>transactions.</em><br/>We engineer outcomes.</h2>
         <div class="wpillars">
-          <div class="wp"><span class="wpn">01</span><div><h4>Institutional Pedigree</h4><p>Our founding team carries direct IPC DNA &mdash; of the world's top 3 commercial real estate advisory firms. That standard defines every mandate we undertake.</p></div></div>
+          <div class="wp"><span class="wpn">01</span><div><h4>Institutional Pedigree</h4><p>Our founding team carries direct Cushman &amp; Wakefield DNA &mdash; one of the world's top 3 commercial real estate advisory firms. That standard defines every mandate we undertake.</p></div></div>
           <div class="wp"><span class="wpn">02</span><div><h4>Deep Hyderabad Roots</h4><p>40+ micro-markets. 200+ commercial corridors mapped. We know which road, which block, which frontage works &mdash; before a brand even asks.</p></div></div>
           <div class="wp"><span class="wpn">03</span><div><h4>Both Sides of the Table</h4><p>With background in FMCG brands, retail tech, and category management, we understand how brands think. We negotiate for our clients &mdash; not in the middle.</p></div></div>
           <div class="wp"><span class="wpn">04</span><div><h4>Speed That Wins Deals</h4><p>Proprietary leasing automation tools mean we identify, qualify, and present options faster than any traditional broker &mdash; and close before market conditions shift.</p></div></div>
@@ -368,12 +369,12 @@ border-bottom:1px solid rgba(200,168,90,.15);">
 </section>
 <section class="founders" id="founders">
   <div class="fi-band">
-    <div class="fi-band-bg" style="background-image:url('https://i.ytimg.com/vi/2RJcPdlj7zc/maxresdefault.jpg')"></div>
+    <div class="fi-band-bg" style="background-image:url('img-investment.jpg')"></div>
     <div class="fi-band-overlay"></div>
     <div class="fi-inner">
       <div class="fi-kicker fu">The People Behind Every Deal</div>
       <h2 class="fi-h fu d1">Two founders.<br/>One unshakeable<br/><em>standard of excellence.</em></h2>
-      <p class="fi-sub fu d2">Between them: a decade at IPC organisation, transactions across every commercial corridor in Hyderabad along with mandates in few majors, and a track record that speaks in square feet and signed agreements &mdash; not promises.</p>
+      <p class="fi-sub fu d2">Between them: a decade at Cushman &amp; Wakefield, mandates across every major commercial corridor in Hyderabad, and a track record that speaks in square feet and signed agreements &mdash; not promises.</p>
       <div class="fi-stats fu d3">
         <div class="fi-stat"><div class="fi-stat-n">13+</div><div class="fi-stat-l">Yrs in RE &amp; Retail</div></div>
         <div class="fi-stat"><div class="fi-stat-n">C&amp;W</div><div class="fi-stat-l">Institutional Pedigree</div></div>
@@ -384,18 +385,18 @@ border-bottom:1px solid rgba(200,168,90,.15);">
   </div>
   <div class="f-full fu">
     <div class="f-img">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Phoenix_Palassio_mall_Lucknow.jpg/1280px-Phoenix_Palassio_mall_Lucknow.jpg" alt="Retail Leasing Advisory Hyderabad" onerror="this.src='hero-bg.png'"/>
+      <img src="image-leasing.webp" alt="Retail Leasing Advisory Hyderabad" onerror="this.src='hero-bg.png'"/>
       <div class="f-img-ov"></div>
       <div class="f-badge">Managing Partner &middot; Co-Founder</div>
     </div>
     <div class="f-panel">
       <div class="f-pk">Leadership &middot; Retail Advisory</div>
       <div class="f-name">Kula Sekhar<br/>Reddy</div>
-      <div class="f-role">15+ Years &middot; Ex Cushman &amp; Wakefield &middot; ICFAI Hyderabad MBA</div>
+      <div class="f-role">13+ Years &middot; Ex Cushman &amp; Wakefield &middot; IBS Hyderabad MBA</div>
       <p class="f-tagline">&ldquo;I've sat on both sides &mdash; as a brand, as an advisor. That's why I know exactly what a client needs before they articulate it.&rdquo;</p>
-      <p class="f-bio">Kula Sekhar Reddy spent <strong>five+ career-defining years at Cushman &amp; Wakefield</strong> &mdash; progressing from AVP to Senior Associate Director &mdash; leading retail tenant representation across the entire Telangana and AP portfolio. He knows every Grade-A mall, every high-street frontage, every landlord negotiation style in the region.<br/><br/>Before C&amp;W, he built sales operations at <strong>Mondelez International</strong> and <strong>Johnson &amp; Johnson</strong>, then led market development at Nukkad Shops. That brand-side experience means he never negotiates blind &mdash; he understands occupancy costs, fit-out economics, and break-even timelines from the operator's own perspective.<br/><br/>When Kula commits to a mandate, the deal gets done. His clients don't get brokers &mdash; they get a strategist who closes.</p>
+      <p class="f-bio">Kula Sekhar Reddy spent <strong>five career-defining years at Cushman &amp; Wakefield</strong> &mdash; progressing from AVP to Senior Associate Director &mdash; leading retail tenant representation across the entire Telangana and AP portfolio. He knows every Grade-A mall, every high-street frontage, every landlord negotiation style in the region.<br/><br/>Before C&amp;W, he built sales operations at <strong>Mondelez International</strong> and <strong>Johnson &amp; Johnson</strong>, then led market development at Nukkad Shops. That brand-side experience means he never negotiates blind &mdash; he understands occupancy costs, fit-out economics, and break-even timelines from the operator's own perspective.<br/><br/>When Kula commits to a mandate, the deal gets done. His clients don't get brokers &mdash; they get a strategist who closes.</p>
       <div class="f-proof">
-        <div class="f-pi"><div class="f-pin">5+ Yrs</div><div class="f-pil">Cushman &amp; Wakefield</div></div>
+        <div class="f-pi"><div class="f-pin">5 Yrs</div><div class="f-pil">Cushman &amp; Wakefield</div></div>
         <div class="f-pi"><div class="f-pin">AP+TS</div><div class="f-pil">Regional Coverage</div></div>
         <div class="f-pi"><div class="f-pin">500+</div><div class="f-pil">Connections</div></div>
       </div>
@@ -405,7 +406,7 @@ border-bottom:1px solid rgba(200,168,90,.15);">
     </div>
   </div>
   <div class="xband">
-    <img src="https://oxfordpartners.com/wp-content/uploads/2020/11/Lease-Negotiation-Strategies.jpg" alt="Real Estate Deal" onerror="this.style.display='none'"/>
+    <img src="image-brand.webp" alt="Real Estate Deal" onerror="this.style.display='none'"/>
     <div class="xband-ov"></div>
     <div class="xband-txt">
       <div class="xband-q">&ldquo;In Hyderabad's commercial market, <em>the right advisor pays for themselves</em> &mdash; not in fees saved, but in deals others simply couldn't close.&rdquo;</div>
@@ -414,18 +415,18 @@ border-bottom:1px solid rgba(200,168,90,.15);">
   </div>
   <div class="f-full rev fu">
     <div class="f-img">
-      <img src="https://media.istockphoto.com/id/1365436662/photo/real-estate-agent-with-documents.jpg?s=612x612&w=0&k=20&c=Wl9A3z0yKGe5aGqvv8k7RWMQY31JkZDnEZ0JsIHj7Xg=" alt="Commercial Property Advisory" onerror="this.src='hero-bg.png'"/>
+      <img src="image-intelligence.webp" alt="Commercial Property Advisory" onerror="this.src='hero-bg.png'"/>
       <div class="f-img-ov"></div>
       <div class="f-badge">Co-Managing Partner &middot; Co-Founder</div>
     </div>
     <div class="f-panel">
       <div class="f-pk">Leadership &middot; Strategy &amp; Intelligence</div>
       <div class="f-name">Shashwat<br/>Bohidar</div>
-      <div class="f-role">15+ Years &middot; B.Tech EE + MBA &middot; Market Intelligence Specialist</div>
-      <p class="f-tagline">&ldquo;We don't just close deals; we architect the future of ownership through the lens of innovation.&rdquo;</p>
-      <p class="f-bio">Shashwat Bohidar is the intelligence engine behind Triumph. With a <strong>B.Tech in Electrical Engineering</strong> and an <strong>MBA from ICFAI, Hyderabad</strong>, he brings analytical rigour rare in the advisory world &mdash; one that turns raw market data into decisions worth crores.<br/><br/>His career spans <strong>Top Retail Leaders</strong> (category management), FMCG sales, Business Development,  retail technology at Mii Mobile, and six years building Triumph's proprietary leasing automation platform &mdash; the same system that lets the firm identify, qualify, and present opportunities faster than any traditional broker in the market.<br/><br/>As Co-Managing Partner, Shashwat owns market intelligence, investor advisory, and the systems that keep Triumph operating at institutional speed. He doesn't just advise on the market &mdash; he spearheads technology integration into the organisation.</p>
+      <div class="f-role">16+ Years &middot; B.Tech EE + MBA &middot; Market Intelligence Specialist</div>
+      <p class="f-tagline">&ldquo;Data is the only honest language in real estate. I build systems that make sure our clients always speak it fluently.&rdquo;</p>
+      <p class="f-bio">Shashwat Bohidar is the intelligence engine behind Triumph. With a <strong>B.Tech in Electrical Engineering</strong> and an <strong>MBA from ICFAI, Hyderabad</strong>, he brings analytical rigour rare in the advisory world &mdash; one that turns raw market data into decisions worth crores.<br/><br/>His career spans <strong>Reliance Retail</strong> (category management), FMCG sales, retail technology at Mii Mobile, and five years building Triumph's proprietary leasing automation platform &mdash; the same system that lets the firm identify, qualify, and present opportunities faster than any traditional broker in the market.<br/><br/>As Co-Managing Partner, Shashwat owns market intelligence, investor advisory, and the systems that keep Triumph operating at institutional speed. He doesn't just advise on the market &mdash; he has built the tools that read it in real time.</p>
       <div class="f-proof">
-        <div class="f-pi"><div class="f-pin">15+</div><div class="f-pil">Years Experience</div></div>
+        <div class="f-pi"><div class="f-pin">16+</div><div class="f-pil">Years Experience</div></div>
         <div class="f-pi"><div class="f-pin">3</div><div class="f-pil">Active Ventures</div></div>
         <div class="f-pi"><div class="f-pin">500+</div><div class="f-pil">Connections</div></div>
       </div>
@@ -435,7 +436,7 @@ border-bottom:1px solid rgba(200,168,90,.15);">
     </div>
   </div>
   <div class="fcombined fu">
-    <div class="fcs"><div class="fcsn">10+</div><div class="fcsl">Combined Yrs in Real Estate</div></div>
+    <div class="fcs"><div class="fcsn">18+</div><div class="fcsl">Combined Yrs in Real Estate</div></div>
     <div class="fcs"><div class="fcsn">C&amp;W</div><div class="fcsl">Institutional DNA</div></div>
     <div class="fcs"><div class="fcsn">250K+</div><div class="fcsl">Sq Ft Leased Together</div></div>
     <div class="fcs"><div class="fcsn">40+</div><div class="fcsl">Hyderabad Micro-Markets</div></div>
@@ -449,8 +450,8 @@ border-bottom:1px solid rgba(200,168,90,.15);">
         <h2 class="sh2">Let's discuss<br/>your <em>next move.</em></h2>
         <p class="sdesc" style="margin-top:13px">Whether you're a brand looking to expand, a property owner seeking tenants, or an investor evaluating opportunities &mdash; the right conversation starts here.</p>
         <div class="citems">
-          <div class="citem"><div class="cico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 1C4.8 1 3 2.8 3 5c0 3.5 4 8 4 8s4-4.5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="7" cy="5" r="1.5"/></svg></div><div><div class="clbl">Head Office</div><div class="cval">3rd Floor, ICP 800, Road 36, Jubilee Hills, Hyderabad, Telangana, India</div></div></div>
-          <div class="citem"><div class="cico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="3" width="12" height="9" rx="1"/><path d="M1 6l6 3 6-3"/></svg></div><div><div class="clbl">Email</div><div class="cval">hello@@triumphcorp.in</div></div></div>
+          <div class="citem"><div class="cico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 1C4.8 1 3 2.8 3 5c0 3.5 4 8 4 8s4-4.5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="7" cy="5" r="1.5"/></svg></div><div><div class="clbl">Head Office</div><div class="cval">Hyderabad, Telangana, India</div></div></div>
+          <div class="citem"><div class="cico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="3" width="12" height="9" rx="1"/><path d="M1 6l6 3 6-3"/></svg></div><div><div class="clbl">Email</div><div class="cval"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c55525a537c484e5549514c545d4f4f59485d584a554f534e4f125f5351">[email&#160;protected]</a></div></div></div>
           <div class="citem"><div class="cico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="7" cy="7" r="5.5"/><path d="M7 3.5V7l2.5 1.5"/></svg></div><div><div class="clbl">Business Hours</div><div class="cval">Mon&ndash;Sat &middot; 9:00 AM &ndash; 8:00 PM IST</div></div></div>
         </div>
       </div>
@@ -479,8 +480,8 @@ border-bottom:1px solid rgba(200,168,90,.15);">
   <div class="W">
     <div class="ftop">
       <div>
-        <img src="image-investment0"
-          <p class="ftag2">Hyderabad's premier commercial real estate advisory &mdash; where institutional rigour meets local intelligence.</p>
+        <div class="nav-logo-wrap" style="margin-bottom:12px"><span class="nav-logo-name">Triumph Asset Advisors</span><span class="nav-logo-sub">Consulting &middot; Leasing &middot; Investments</span></div>
+        <p class="ftag2">Hyderabad's premier commercial real estate advisory &mdash; where institutional rigour meets local intelligence.</p>
       </div>
       <div class="fcol"><h5>Services</h5><div class="flinks"><a href="#services">Commercial Leasing</a><a href="#services">Investment Advisory</a><a href="#services">Market Intelligence</a><a href="#services">Brand Expansion</a></div></div>
       <div class="fcol"><h5>Navigate</h5><div class="flinks"><a href="#home">Home</a><a href="#why-us">Why Triumph</a><a href="#market-intel">Intelligence</a><a href="#news">News</a><a href="#founders">Leadership</a><a href="#contact">Contact</a></div></div>
@@ -492,7 +493,7 @@ border-bottom:1px solid rgba(200,168,90,.15);">
     </div>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
 
@@ -606,18 +607,4 @@ async function loadNews(){
     let txt=data.content&&data.content[0]&&data.content[0].text||'';
     txt=txt.replace(/```json/g,'').replace(/```/g,'').trim();
     let articles;
-    try{ articles=JSON.parse(txt); }
-    catch(e){ articles=fallbackNews(); }
-    renderNews(articles);
-  }catch(err){
-    renderNews(fallbackNews());
-  }
-}
-
-document.addEventListener('DOMContentLoaded',function(){
-  loadMarket();
-  loadNews();
-});
-</script>
-</body>
-</html>
+    try{ articles=JSON.parse(txt);
